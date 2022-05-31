@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+import java.lang.Math;
+class GFG {
+   
+  
+	public static void main (String[] args) {
+		
+      /* Scanner sc=new Scanner(System.in);
+       double n=sc.nextInt();
+       
+       double res=0;
+        while(n!=0){
+        double p=n%10;
+        res=res+Math.pow(p,3);
+        n=n/10;
+    }
+       System.out.println(res);
+       
+      */
+      int number = 153, originalNumber, remainder, result = 0;
+
+        originalNumber = number;
+
+        while (originalNumber != 0)
+        {
+            remainder = originalNumber % 10;
+            result += Math.pow(remainder, 3);
+            originalNumber /= 10;
+        }
+
+        if(result == number)
+            System.out.println(number + " is an Armstrong number.");
+        else
+            System.out.println(number + " is not an Armstrong number.");
+		
+	}
+}

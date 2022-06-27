@@ -1,0 +1,41 @@
+/*package whatever //do not write package name here */
+
+
+import java.io.*;
+
+class GFG {
+    
+    
+    public static boolean linearserrch(int arr[],int x)
+    {
+        boolean p=false;
+        for(int i=0;i<arr.length;++i)
+        {
+            if(arr[i]==x)
+            {
+                p=true;
+                break;
+            }
+        }
+        return p;
+    }
+    
+    
+	public static void main (String[] args) {
+		
+		int []arr={1,5,3,4,2};
+		int n=arr.length;
+		  int x=8;
+		  
+		  if(linearserrch(arr,x))
+		  {
+		      System.out.println("The number is present");
+		  }
+		  else{
+		      System.out.println("The number is not present");
+		  }
+		  
+		
+
+	}
+}

@@ -1,0 +1,23 @@
+import java.util.*;
+import java.util.Scanner;
+public class Main
+{
+    static void removebracket(String s){
+        int n=s.length();
+        for(int i=0;i<n;++i){
+            
+            if(s.charAt(i)=='(' || s.charAt(i)==')'){
+                continue;
+            }
+            System.out.print(s.charAt(i));
+        }
+        
+    } 
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		removebracket(s);
+		
+	}
+}

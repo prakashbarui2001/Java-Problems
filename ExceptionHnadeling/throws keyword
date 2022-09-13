@@ -1,0 +1,43 @@
+import java.util.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+class ReadAndWrite{
+    
+    void readFile() throws FileNotFoundException
+    {
+       
+       FileInputStream sc=new FileInputStream("d:/abc.txt"); 
+    }
+    void saveFile() throws FileNotFoundException
+     {
+        String text="Hii Prakash";
+        
+        FileOutputStream sc=new FileOutputStream("d:/xyz.txt");
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		
+		ReadAndWrite obj= new ReadAndWrite();
+		
+		try {
+		    
+		    obj.readFile();
+		} catch(Exception e) {
+		     e.printStackTrace();
+		}
+	  try {
+	      
+	      	obj.saveFile();
+	      	
+	  } 
+	  catch(Exception e) {
+	      e.printStackTrace();
+	  }
+	  System.out.println("Hello Prakash");
+	
+	
+	}
+}

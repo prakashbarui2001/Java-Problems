@@ -1,0 +1,23 @@
+create database Onlineorder;
+-- drop database Onlineorder;
+use Onlineorder;
+drop table table1;
+create table table1(
+  name char(10)
+);
+describe table1;
+select *from table1;
+insert into table1 values('A');
+insert into table1 values('B');
+insert into table1 values('C');
+drop 
+create table table2(
+  nomber int(10)
+);
+describe table2;
+select *from table2;
+insert into table2 values(1);
+insert into table2 values(2);
+**************************************************************************************************************************************************************************
+-- cross join 
+select *from table1 cross join table2;

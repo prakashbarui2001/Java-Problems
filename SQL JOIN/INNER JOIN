@@ -33,6 +33,59 @@ from employe e
 inner join department d
 on e.dept_id=d.dept_id;
 --
+-- create three table order, customer, shipper and do the unner join
+create database Onlineorder;
+use Onlineorder;
+create table orders(
+  OrderID int not null primary key,
+  CustomerID int(25),
+  EmployeeID int(25),
+  OrderDate DATETIME,
+  ShipperID int(25)
+);
+describe orders;
+select *from orders;
+insert into orders values(10308,2,7,'1996-09-18',3);
+insert into orders values(10309,37,3,'1996-09-19',	1);
+insert into orders values(10310,77,	8,'1996-09-20',	2);
+create table customer(
+  CustomerID int not null primary key,
+  CustomerName char(25),
+  ContactName char(25),
+  Address char(25),
+  City char(25)
+
+);
+select * from customer;
+insert into customer values(1,'Alfreds Futterkiste','	Maria Anders','Obere Str. 57','	Berlin');
+insert into customer values(2,'Ana Trujillo','Ana Trujillo','Avda. de la ','Berlin');
+insert into customer values(3,'Antonio Moreno Taquería','	Maria Anders','Obere Str. 57','	Berlin');
+-- inner join of two table
+-- select o.OrderID,o.EmployeeID,c.CustomerID,CustomerName,c.  City 
+-- from orders o
+-- inner join customer c
+-- on o.CustomerID=c.CustomerID;
+create table Shippers(
+  ShippersId int not null primary key,
+  recivername char(25),
+  recivernumber int(17)
+);
+describe Shippers;
+select *from Shippers;
+insert into Shippers values(1,'AKASH',23456);
+insert into Shippers values(2,'bKASH',23456);
+insert into Shippers values(3,'cKASH',23456);
+
+select o.OrderID,o.EmployeeID,c.CustomerID,CustomerName,c.City,s.recivername,s. ShippersId
+from orders o
+inner join customer c
+on o.CustomerID=c.CustomerID
+inner join Shippers s
+on o.CustomerID=s. ShippersId;
+
+
+
+
 
 
 

@@ -1,0 +1,61 @@
+use ORG;
+select *from worker;
+select *from bonus;
+select *from persons;
+select *from title;
+create table Worker(
+  WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  FIRST_NAMFE CHAR(25),
+  LAST_NAME CHAR(25),
+  SALARY INT (15),
+  JOINING_DATE DATETIME,
+  DEPARTEMENT CHAR(25)
+
+
+);
+insert into Worker
+  ( WORKER_ID,FIRST_NAMFE,LAST_NAME,SALARY, JOINING_DATE, DEPARTEMENT) values
+  (001,'Rahul','Goswami',100000,'14-02-20 09.00.00',"HR");
+  insert into Worker
+  ( WORKER_ID,FIRST_NAMFE,LAST_NAME,SALARY, JOINING_DATE, DEPARTEMENT) values
+  (002,'Sandip','Mondal',200000,'15-02-20 09.00.00','Admin'),
+  (003,'Monojit','Basuli',300000,'16-02-20 09.00.00','HR'),
+  (004,'Koushik','Lakshman',400000,'17-02-20 09.00.00','Admin'),
+  (005,'Sudip','Ganguli',500000,'18-02-20 09.00.00','HR'),
+  (006,'Prakash','Barui',600000,'19-02-20 09.00.00','HR');
+  
+  select *from org.worker;
+   create table bonus(
+     WORKER_REF_ID INT,
+     BONUS_AMOUNT INT(10),
+     BONUS_DATE DATETIME,
+     FOREIGN KEY (WORKER_REF_ID)
+     references worker(WORKER_ID)
+     on delete cascade
+    
+  );
+  select *from org.bonus;
+  insert into bonus(WORKER_REF_ID,BONUS_AMOUNT, BONUS_DATE) values
+  (001,5400,"16-04-20"),
+  (002,3000,"18-05-20"),
+  (003,4000,"16-02-20"),
+  (001,4500,"16-02-20"),
+  (002,3500,"16-06-21");
+  select *from org.bonus;
+  create table title(
+     WORKER_REF_ID INT,
+     WORKER_TITLE CHAR(25),
+     AFFECTED_FROM DATETIME,
+     FOREIGN KEY (WORKER_REF_ID)
+     references worker(WORKER_ID)
+     on delete cascade
+    
+  );
+  insert into title(WORKER_REF_ID,WORKER_TITLE, AFFECTED_FROM) values
+   (001,'Mnager','14-02-20 09.00.00' ),
+   (002,'Mnager','11-02-20 09.00.00'),
+   (003,'Executive','15-02-21 09.00.00'),
+   (004,'Mnager','14-02-22 09.00.00'),
+   (005,'Executive','14-02-21 09.00.00'),
+   (006,'Mnager','13-02-20 09.00.00');
+ 

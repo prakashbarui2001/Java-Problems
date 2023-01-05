@@ -1,0 +1,34 @@
+ Documentation on jdbc database connectivity;
+1.how i find port?
+=) run mysql comandline = show global variables like 'PORT'; and u can find port number.
+
+2. step to connect with jdbc?
+ =) There are 5 steps to connect any java application with the database using JDBC. These steps are as follows:
+     i.Register the Driver class
+    ii.Create connection
+   iii.Create statement
+    iv.Execute queries
+     v.Close connection
+3.Explaing the register driver class ?
+ =) 1) Register the driver class
+    The " forName() " method of Class class is used to register the driver class. 
+    This method is used to dynamically load the driver class.
+    Syntax of forName() method:-
+     {public static void forName(String className)throws ClassNotFoundException.}
+    example :[Class.forName("com.mysql.jdbc.Driver")];
+
+4.Create connection on mtysql?
+  =) Connection URL: The connection URL for the mysql database is {jdbc:mysql://localhost:3306/}sonoo where
+     jdbc is the API, mysql is the database, localhost is the server name on which mysql is running, 
+     we may also use IP address, 3306 is the port number and sonoo is the database name.
+     We may use any database, in such case, we need to replace the sonoo with our database name.
+     Real Example =Connection con=DriverManager.getConnection(  
+                    "jdbc:mysql://localhost:3306/sonoo","root","root");   
+
+***************************************************************************************************************************
+
+
+
+
+
+

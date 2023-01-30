@@ -1,0 +1,69 @@
+**JavaScript has a clumsy history of working with strings, particularly if you want to concatenate or connect multiple strings together. Before the arrival of ES6, to add strings together you needed to use the + operator to add each string segment to one another.
+
+With the addition of ES6, we were given a newer form of string called a template literal, which consists of two back ticks `` instead of single or double quotes.
+
+Instead of having to use the + operator, we can connect strings by putting a JavaScript expression (such as a variable) within a special ${} syntax:
+
+/* 
+Concatenating strings prior to ES6.
+Notice the awkward space after the word Hello?
+*/
+function sayHello(text) {
+  return "Hello " + text + "!";
+}
+
+sayHello("React"); // Hello React!
+
+/* 
+Concatenating strings using template literals.
+See how much more readable and predictable this code is?
+*/
+function sayHelloAgain(text) {
+  return `Hello again, ${text}!`;
+}
+
+sayHelloAgain("React"); // Hello again, React!
+What's powerful about template literals is their ability to use any JavaScript expression (that is, anything in JavaScript that resolves to a value) within the ${} syntax.
+
+We can even include conditional logic using the ternary operator, which is perfect for conditionally adding or removing a class or style rule to a given JSX element:
+
+/* Go to react.new and paste this code in to see it work! */
+import React from "react";
+
+function App() {
+  const [isRedColor, setRedColor] = React.useState(false);
+
+  const toggleColor = () => setRedColor((prev) => !prev);
+
+  return (
+    <button
+      onClick={toggleColor}
+      style={{
+        background: isRedColor ? "red" : "black",
+        color: "white",
+      }}
+    >
+      Button is {isRedColor ? "red" : "not red"}
+    </button>
+  );
+}
+
+export default App;
+In short, template literals are great for React whenever we need to dynamically create strings. For example, when we use string values that can change in our head or body elements in our site:
+
+import React from "react";
+import Head from "./Head";
+
+function Layout(props) {
+  // Shows site name (i.e. Reed Barger) at end of page title
+  const title = `${props.title} | Reed Barger`;
+
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <main>{props.children}</main>
+    </>
+  );
+}

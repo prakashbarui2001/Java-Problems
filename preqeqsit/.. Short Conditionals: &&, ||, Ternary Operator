@@ -1,0 +1,70 @@
+Considering that React is just JavaScript, it is very easy to conditionally show (or hide) JSX elements using simple if statements and sometimes switch statements.
+
+import React from "react";
+
+function App() {
+  const isLoggedIn = true;
+
+  if (isLoggedIn) {
+    // Shows: Welcome back!
+    return <div>Welcome back!</div>;
+  }
+
+  return <div>Who are you?</div>;
+}
+
+export default App;
+With the help of some essential JavaScript operators, we cut down on repetition and make our code more concise.
+
+We can transform the if statement above into the following, using the ternary operator. The ternary operator functions exactly the same as an if-statement, but it is shorter, it is an expression (not a statement), and can be inserted within JSX:
+
+import React from "react";
+
+function App() {
+  const isLoggedIn = true;
+
+  // Shows: Welcome back!
+  return isLoggedIn ? <div>Welcome back!</div> : <div>Who are you?</div>;
+}
+
+export default App;
+Ternary operators can also be used inside curly braces (again, since it is an expression):
+
+import React from "react";
+
+function App() {
+  const isLoggedIn = true;
+
+  // Shows: Welcome back!
+  return <div>{isLoggedIn ? "Welcome back!" : "Who are you?"}</div>;
+}
+
+export default App;
+If we were to change the example above and only wanted to show text if the user was logged in (if isLoggedIn is true), this would be a great use case for the && (and) operator.
+
+If the first value (operand) in the conditional is true, the && operator displays the second operand. Otherwise it returns the first operand. And since it is falsy (is a value automatically converted to the boolean false by JavaScript), it is not rendered by JSX:
+
+import React from "react";
+
+function App() {
+  const isLoggedIn = true;
+
+  // If true: Welcome back!, if false: nothing
+  return <div>{isLoggedIn && "Welcome back!"}</div>;
+}
+
+export default App;
+Let's say that we want the reverse of what we're doing now: to only say "Who are you?" if isLoggedIn is false. If it's true, we won't show anything.
+
+For this logic, we can use the || (or) operator. It essentially works opposite to the && operator. If the first operand is true, the first (falsy) operand is returned. If the first operand is false, the second operand is returned.
+
+import React from "react";
+
+function App() {
+  const isLoggedIn = true;
+
+  // If true: nothing, if false: Who are you?
+  return <div>{isLoggedIn || "Who are you?"}</div>;
+}
+
+export default App;

@@ -1,0 +1,76 @@
+The basis of any React application is the component. In React, components are defined with both JavaScript functions and classes.
+
+But unlike JavaScript functions, React components return JSX elements that are used to structure our application interface.
+
+// JavaScript function: returns any valid JavaScript type
+function javascriptFunction() {
+  return "Hello world";
+}
+
+// React function component: returns JSX
+function ReactComponent(props) {
+  return <h1>{props.content}</h1>;
+}
+Note the different casing between the names of JavaScript functions and React function components. JavaScript functions are named in camel casing, while React function components are written with pascal casing (in which all words are capitalized).
+
+There are two different ways to write a function in JavaScript: the traditional way, using the function keyword, called a function declaration, and as an arrow function, which was introduced in ES6.
+
+Both function declarations and arrow functions can be used to write function components in React.
+
+The primary benefit of arrow functions is their succinctness. We can use several shorthands in order to write our functions to remove unnecessary boilerplate, such that we can even write it all on a single line.
+
+// Function declaration syntax
+function MyComponent(props) {
+  return <div>{props.content}</div>;
+}
+
+// Arrow function syntax
+const MyComponent = (props) => {
+  return <div>{props.content}</div>;
+};
+
+// Arrow function syntax (shorthand)
+const MyComponent = (props) => <div>{props.content}</div>;
+
+/* 
+In the last example we are using several shorthands that arrow functions allow:
+
+1. No parentheses around a single parameter
+2. Implicit return (as compared to using the "return" keyword)
+3. No curly braces for function body
+*/
+One small benefit of using function declarations over arrow functions is that you don't have to worry about problems with hoisting.
+
+Due to the JavaScript behavior of hoisting, you can use multiple function components made with function declarations in a single file in whichever order you like.
+
+Function components made with arrow functions, however, cannot be ordered whichever way you like. Because JavaScript variables are hoisted, arrow function components must be declared before they are used:
+
+function App() {
+  return (
+    <>
+      {/* Valid! FunctionDeclaration is hoisted */}
+      <FunctionDeclaration />
+      {/* Invalid! ArrowFunction is NOT hoisted. Therefore, it must be declared before it is used */}
+      <ArrowFunction />
+    </>
+  );
+}
+
+function FunctionDeclaration() {
+  return <div>Hello React!</div>;
+}
+
+function ArrowFunction() {
+  return <div>Hello React, again!</div>;
+}
+Another small difference in using the function declaration syntax is that you can immediately export a component from a file using export default or export before the function is declared. You can only use the export keyword before arrow functions (default exports must be placed on a line below the component).
+
+// Function declaration syntax can be immediately exported with export default or export
+export default function App() {
+  return <div>Hello React</div>;
+}
+
+// Arrow function syntax must use export only
+export const App = () => {
+  return <div>Hello React</div>;
+};

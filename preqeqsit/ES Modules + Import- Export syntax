@@ -1,0 +1,79 @@
+ES6 gave us the ability to easily share code between our own JavaScript files as well as third-party libraries using ES modules.
+
+Also, when we leverage tools like Webpack, we can import assets like images and svgs, as well as CSS files and use them as dynamic values in our code.
+
+/* We're bringing into our file a library (React), a png image, and CSS styles */
+import React from "react";
+import logo from "../img/site-logo.png";
+import "../styles/app.css";
+
+function App() {
+  return (
+    <div>
+      Welcome!
+      <img src={logo} alt="Site logo" />
+    </div>
+  );
+}
+
+export default App;
+The idea behind ES modules is to be able to split up our JavaScript code into different files, to make it modular or reusable across our app.
+
+As far as JavaScript code goes, we can import and export variables and functions. There are two ways of importing and exporting, as named imports/exports and as default imports/exports.
+
+There can only be one thing we make a default import or export per file and we can make as many things named imports/export as we like. For example:
+
+// constants.js
+export const name = "Reed";
+
+export const age = 28;
+
+export default function getName() {
+  return name;
+}
+
+// app.js
+// Notice that named exports are imported between curly braces
+import getName, { name, age } from "../constants.js";
+
+console.log(name, age, getName());
+We can also write all of the exports at the end of the file instead of next to each variable or function:
+
+// constants.js
+const name = "Reed";
+
+const age = 28;
+
+function getName() {
+  return name;
+}
+
+export { name, age };
+export default getName;
+
+// app.js
+import getName, { name, age } from "../constants.js";
+
+console.log(name, age, getName());
+You can also alias or rename what you are importing using the as keyword for named imports. The benefit of default exports is that they can be named to whatever you like.
+
+// constants.js
+const name = "Reed";
+
+const age = 28;
+
+function getName() {
+  return name;
+}
+
+export { name, age };
+export default getName;
+
+// app.js
+import getMyName, { name as myName, age as myAge } from "../constants.js";
+
+console.log(myName, myAge, getMyName());
+In the time it takes to watch your favorite TV show, you can start a $100,000 / year career with React.
+In this premium React training course, you can unlock the knowledge, skills, and confidence that deliver life-changing results in real dollars.
+
+Gain the insider information hundreds of developers have already used to master React, find their dream jobs, and take control of their future:

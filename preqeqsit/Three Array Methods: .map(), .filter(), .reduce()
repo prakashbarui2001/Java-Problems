@@ -1,0 +1,97 @@
+*Inserting primitive values into JSX elements is easy – just use curly braces.
+
+We can insert any valid expressions, including variables that contain primitive values (strings, numbers, booleans, and so on) as well as object properties that contain primitive values.
+
+import React from "react";
+
+function App() {
+  const name = "Reed";
+  const bio = {
+    age: 28,
+    isEnglishSpeaker: true,
+  };
+
+  return (
+    <>
+      <h1>{name}</h1>
+      <h2>I am {bio.age} years old</h2>
+      <p>Speaks English: {bio.isEnglishSpeaker}</p>
+    </>
+  );
+}
+
+export default App;
+What if we have an array and we want to iterate over that array to show each array element within an individual JSX element?
+
+For this, we can use the .map() method. It allows us to transform each element in our array in the way we specify with the inner function.
+
+Note that it is especially concise when used in combination with an arrow function.
+
+/* Note that this isn't exactly the same as the normal JavaScript .map() method, but is very similar. */
+import React from "react";
+
+function App() {
+  const programmers = ["Reed", "John", "Jane"];
+
+  return (
+    <ul>
+      {programmers.map((programmer) => (
+        <li>{programmer}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default App;
+There are other flavors of the .map() method that perform related tasks and are important to know because they can be chained in combination with one another.
+
+Why? Because .map(), like many array methods, returns a shallow copy of the array that it has iterated over. This enables its returned array to be passed onto the next method in the chain.
+
+.filter(), as its name indicates, allows us to filter certain elements out of our array. For example, if we wanted to remove all names of programmers that started with "J", we could do so with .filter():
+
+import React from "react";
+
+function App() {
+  const programmers = ["Reed", "John", "Jane"];
+
+  return (
+    <ul>
+      {/* Returns 'Reed' */}
+      {programmers
+        .filter((programmer) => !programmer.startsWith("J"))
+        .map((programmer) => (
+          <li>{programmer}</li>
+        ))}
+    </ul>
+  );
+}
+
+export default App;
+It's important to understand that both .map() and .filter() are just different variations of the .reduce() array method, which is capable of transforming array values into virtually any data type, even non-array values.
+
+Here's .reduce() performing the same operation as our .filter() method above:
+
+import React from "react";
+
+function App() {
+  const programmers = ["Reed", "John", "Jane"];
+
+  return (
+    <ul>
+      {/* Returns 'Reed' */}
+      {programmers
+        .reduce((acc, programmer) => {
+          if (!programmer.startsWith("J")) {
+            return acc.concat(programmer);
+          } else {
+            return acc;
+          }
+        }, [])
+        .map((programmer) => (
+          <li>{programmer}</li>
+        ))}
+    </ul>
+  );
+}
+
+export default App;

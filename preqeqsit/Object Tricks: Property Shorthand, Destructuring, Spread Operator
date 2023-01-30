@@ -1,0 +1,77 @@
+Like arrays, objects are a data structure that you need to be comfortable with when using React.
+
+Since objects exist for the sake of organized key-value storage, unlike arrays, you're going to need to be very comfortable accessing and manipulating object properties.
+
+To add properties to an object as you create it, you name the property and its corresponding value. One very simple shorthand to remember is that if the property name is the same as the value, you only have to list the property name.
+
+This is the object property shorthand:
+
+const name = "Reed";
+
+const user = {
+  // instead of name: name, we can use...
+  name,
+};
+
+console.log(user.name); // Reed
+The standard way to access properties from an object is using the dot notation. An even more convenient approach, however, is object destructuring. It allows us to extract properties as individual variables of the same name from a given object.
+
+It looks somewhat like you're writing an object in reverse, which is what makes the process intuitive. It's much nicer to use than having to use the object name multiple times to access each time you want to grab a value from it.
+
+const user = {
+  name: "Reed",
+  age: 28,
+  isEnglishSpeaker: true,
+};
+
+// Dot property access
+const name = user.name;
+const age = user.age;
+
+// Object destructuring
+const { age, name, isEnglishSpeaker: knowsEnglish } = user;
+// Use ':' to rename a value as you destructure it
+
+console.log(knowsEnglish); // true
+Now if you want to create objects from existing ones, you could list properties one-by-one, but that can get very repetitive.
+
+Instead of copying properties manually, you can spread all of an object's properties into another object (as you create it) using the object spread operator:
+
+const user = {
+  name: "Reed",
+  age: 28,
+  isEnglishSpeaker: true,
+};
+
+const firstUser = {
+  name: user.name,
+  age: user.age,
+  isEnglishSpeaker: user.isEnglishSpeaker,
+};
+
+// Copy all of user's properties into secondUser
+const secondUser = {
+  ...user,
+};
+What is great about the object spread is that you can spread in as many objects into a new one as you like, and you can order them like properties. But be aware that properties that come later with the same name will overwrite previous properties:
+
+const user = {
+  name: "Reed",
+  age: 28,
+};
+
+const moreUserInfo = {
+  age: 70,
+  country: "USA",
+};
+
+// Copy all of user's properties into secondUser
+const secondUser = {
+  ...user,
+  ...moreUserInfo,
+  computer: "MacBook Pro",
+};
+
+console.log(secondUser);
+// { name: "Reed", age: 70, country: "USA", computer: "Macbook Pro" }
+****************************************************************************************************

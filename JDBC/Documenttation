@@ -1,3 +1,5 @@
+ 
+ Password of the mysql commandline client is- [Prakash@123k]
  Documentation on jdbc database connectivity;
 1.how i find port?
 =) run mysql comandline = show global variables like 'PORT'; and u can find port number.

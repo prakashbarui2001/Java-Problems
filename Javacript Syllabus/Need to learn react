@@ -33,6 +33,23 @@ There are specific concepts you need to understand before going into React. Here
 10.Block-level scoping: The block scope restricts the outside
    of a specific block from accessing the variable declared inside the block. 
    
+11.The “this” keyword and its binding rules: “This” keyword is 
+   an object executing the current piece of code or function.
+   
+12.Arrow functions: This introduces concise body syntax to 
+   let you create functions in a cleaner way than the regular functions. 
+   
+13.Exception handling: With this feature, you can handle
+   coding errors and maintain a regular JavaScript flow. 
+   
+14.String manipulation: This involves the different processes 
+   of handling, analyzing, and modifying strings. 
+   
+15.Event bubbling and capturing: Event bubbling is when you propagate an
+   event from a child element to ancestor elements in the DOM while event capturing is the propagation of an event from ancestor elements to a child element.
+   
+   
+   
    
    
    
@@ -67,22 +84,7 @@ Promises in JavaScript
    
    
    
-11.The “this” keyword and its binding rules: “This” keyword is 
-   an object executing the current piece of code or function.
-   
-12.Arrow functions: This introduces concise body syntax to 
-   let you create functions in a cleaner way than the regular functions. 
-   
-13.Exception handling: With this feature, you can handle
-   coding errors and maintain a regular JavaScript flow. 
-   
-14.String manipulation: This involves the different processes 
-   of handling, analyzing, and modifying strings. 
-   
-15.Event bubbling and capturing: Event bubbling is when you propagate an
-   event from a child element to ancestor elements in the DOM while event capturing is the propagation of an event from ancestor elements to a child element.
-   
-   
+
    
    
    

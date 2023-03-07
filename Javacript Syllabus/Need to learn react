@@ -1,0 +1,94 @@
+
+
+What to Learn Before Covering React ???
+There are specific concepts you need to understand before going into React. Here are the topics you should learn to better understand React:
+
+1.Different methods available on JavaScript: It is recommended you learn default methods
+  for data types like strings and arrays such as map, filter, reduce, sort, include, split, join, reverse, etc.  
+  
+2.Promises, callbacks, and asynchronous JavaScript: You have to make network calls asynchronously, 
+  and for that, the knowledge of asynchronous JS and how to handle AJAX requests becomes necessary.
+  
+3.Async Await: Async-await provides a more straightforward way to interact with promises.
+  They make asynchronous code look synchronous, and yet, the work is still asynchronous.
+  
+4.Modules, import, export: When working with React, you isolate your components on separate files.
+  You export some elements from a file and import them to another.
+  
+5.Inheritance: This allows you to create a class that inherits
+   all the functionality of its parent class, and add extra features.
+   
+6.Typecasting: Typecasting, also known as coercion, 
+  is the conversion of a data type to another data type.
+  
+7.Constructor function: This allows you to do the necessary
+  custom initialization on an instantiated object.
+  
+8.Undefined and Null: Undefined is a variable declared
+  without any value assigned, while null is an assignment value. 
+  
+9.Array functions: This enables you to perform multiple
+  calculations on several items in an array. 
+  
+10.Block-level scoping: The block scope restricts the outside
+   of a specific block from accessing the variable declared inside the block. 
+   
+   
+   
+   
+*********************************************************************************************************************************************************************
+
+We recommend focusing on the client-side development skills and some other JS-relevant techniques such as:
+
+Fetch API and errors in JavaScript 
+Optional chaining in JavaScript 
+Async/Await in JavaScript 
+Unique value – set () in JavaScript 
+Reduce () in JavaScript 
+Dynamic object keys in JavaScript
+Event delegation
+Rest and spread operators in JavaScript 
+Map () in JavaScript 
+Destructuring arrays and objects in JavaScript 
+Filter () and find () in JavaScript 
+Callback functions in JavaScript 
+Promises in JavaScript 
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
+11.The “this” keyword and its binding rules: “This” keyword is 
+   an object executing the current piece of code or function.
+   
+12.Arrow functions: This introduces concise body syntax to 
+   let you create functions in a cleaner way than the regular functions. 
+   
+13.Exception handling: With this feature, you can handle
+   coding errors and maintain a regular JavaScript flow. 
+   
+14.String manipulation: This involves the different processes 
+   of handling, analyzing, and modifying strings. 
+   
+15.Event bubbling and capturing: Event bubbling is when you propagate an
+   event from a child element to ancestor elements in the DOM while event capturing is the propagation of an event from ancestor elements to a child element.
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

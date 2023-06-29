@@ -1,0 +1,2 @@
+# Javascript
+Solution of java
